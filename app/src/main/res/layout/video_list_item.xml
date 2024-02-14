@@ -27,7 +27,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@{item.videoThumbnail}" />
 
             <TextView
                 android:id="@+id/fileName"
@@ -37,6 +37,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@+id/videoThumbnail"
                 android:maxLines="2"
+                android:text="@{item.videoFilePath}"
                 android:textSize="30sp" />
 
             <LinearLayout
@@ -55,7 +56,9 @@
                     android:layout_gravity="center_vertical"
                     android:indeterminate="false"
                     android:max="100"
-                    android:progress="@{item.uploadProgress}" />
+                    android:progress="@{item.uploadProgress}"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="@color/green" />
 
                 <TextView
                     android:id="@+id/uploadStatus"
@@ -63,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="10dp"
-                    android:text="Uploading..."
+                    android:text="@{item.uploadStatus}"
                     android:textSize="20sp" />
             </LinearLayout>
         </RelativeLayout>
